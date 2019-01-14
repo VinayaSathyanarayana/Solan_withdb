@@ -316,14 +316,47 @@
                                 <div class="card grey lighten-4 z-depth-1 hoverable card">
                                      <div class="card-content black-text">
                                        
-                                       <div id="app"></div>
-                                   </div>
+                                       
+                                   
+                               
+                          <div class="container">
+                                <div class="container">
+                                    <h2>Leaderboard</h2>
+                                </div>
+                                
+                                <div class="container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Points</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        {% if query_results %}
+                                        <tbody>
+                                            {% for item in query_results %}
+                                            <tr>
+                                                <td>{{ item.login.user.email }}</td>
+                                                <td>{{ item.points }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                            
+                                        </tbody>
+                                        {% else %}
+                                        <p>No students are available.</p>
+                                        {% endif %}
+                                    </table>
+                                    <br>
+                                    
+                                   
+                                 </div>
+
+                                 </div>
                                    </div>
                                    
                                    
                                  </div>
-                               
-                          
                         </section>
                         <footer class="page-footer blue darken-2">
                             <p style="padding-left:22%;">© Copyright 2018 Solan - All Rights Reserved</p>

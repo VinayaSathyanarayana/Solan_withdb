@@ -158,7 +158,13 @@ def dashboardS(request):
     query_result1 = points.objects.filter(
         login__user__email=str(request.user.email))
     pointsObject = query_result1[0]
-    return render(request, 'ciscoapp/dashboardS.html', {'pointsObject': pointsObject})
+    query = "select * from point"
+    print(query)
+    query_result5 = points.objects.raw(query)
+    print(query_result5)
+    #return render(request, 'ciscoapp/dashboardS.html', {'query_results': query_results})
+    return render(request, 'ciscoapp/dashboardS.html', {'query_results': query_result5, 'pointsObject': pointsObject})
+    #desc return render(request, 'ciscoapp/dashboardS.html', {'pointsObject': pointsObject})
 
 def dashboardT(request):
     return render(request, 'ciscoapp/dashboardT.html') 
@@ -302,6 +308,20 @@ def questionoftheweekteacher(request):
     cursor.execute(query)
     return render(request, 'ciscoapp/Deletequestion.html')
 
+
+def qotw(request):
+    question11 = request.POST['question111']
+    subject43 = request.session['subject23']
+    chapter43 = request.session['chapter23']
+    
+    print(question11)
+    query = "update question set  qotw = " + "'" + \
+        str('y') + "'" + " where question = " + \
+        "'" + str(question11) + "'" + "and subject = " + "'" + str(subject43) + \
+        "'" + " and chapter = " + "'" + str(chapter43) + "'"
+    cursor = connection.cursor()
+    cursor.execute(query)
+    return render(request, 'ciscoapp/Deletequestion.html')
 
 
 def QuestionOfTheWeekS(request):

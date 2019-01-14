@@ -49,6 +49,18 @@ class question(models.Model):
         db_table = 'question'
         verbose_name_plural = 'questions'
 
+class qotw(models.Model):
+    subject=models.CharField(primary_key=True,max_length=80,db_column='subject', null=False)
+    chapter=models.CharField(max_length=80,db_column='chapter', null=False)
+    question=models.CharField(max_length=1000, db_column = 'question', null = False)
+    option1 = models.CharField(max_length=500, db_column='option1', null=False)
+    option2 = models.CharField(max_length=500, db_column='option2', null=False)
+    option3 = models.CharField(max_length=500, db_column='option3', null=False)
+    option4 = models.CharField(max_length=500, db_column='option4', null=False)
+
+    class Meta:
+        db_table = 'qotw'
+        verbose_name_plural = 'qotw'
 
 class points(models.Model):
     points = models.IntegerField(default=0, db_column='points', null=False)
