@@ -60,6 +60,10 @@ urlpatterns = [
    # path('', TemplateView.as_view(template_name='index.html'), name='homepage'),
     #path('QuestionOfTheWeekS.html', views.QuestionOfTheWeekS, name='QuestionOfTheWeekS.html')
     #path('view_school', views.get_school, name='get_school'),
+	path('qotw', views.qotw,name='qotw'),
+  	path('qotwstudent', views.qotwstudent, name='qotwstudent'),
+	path('rightans', views.rightans, name='rightans'),
+	path('wrongans', views.wrongans, name='wrongans'),
     path('QuestionOfTheWeekS.html',views.QuestionOfTheWeekS, name='QuestionOfTheWeekS'),
 	path('questionoftheweekteacher', views.questionoftheweekteacher, name='questionoftheweekteacher'),
 	path('GenReport.html', views.GenReport, name='GenReport'),

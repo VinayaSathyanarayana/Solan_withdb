@@ -218,7 +218,7 @@
             <div class="col s12 m6">
               <div class="card grey lighten-4 z-depth-1">
                 <div class="card-content black-text">
-                  <h5>{% for qn in questionList %}
+                  <h5>{% for qn in question1123 %}
             {{ qn.question }}
 			
           {% endfor %}</h5>
@@ -226,47 +226,58 @@
               </div>
             </div>
           </div>
+          <form action = "{% url 'qotw' %}" method="post" class = "input-field">
+          {% csrf_token %}
         <div class="container" style="text-align: left">
                 <div class="divider"></div>
                 <br>
-                <button id="a" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >A</button>
-                  <h6 id="option" ></h6>
+                
+                  <textarea name = "option1" class="materialize-textarea" placeholder="Enter Option 1 here"> </textarea>
+                  <label for="textarea1">Enter option a above</label>
                 <div class="divider"></div>
                 <br>
-                <button id="b" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >B</button>
-                  <h6 id="option">Transpiration</h6>
+                
+                  <textarea name = "option2" class="materialize-textarea" placeholder="Enter Option 2 here"> </textarea>
+                  <label for="textarea1">Enter option b above</label>
+
                 <div class="divider"></div>
                 <br>
-                <button id="c" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >C</button>
-                  <h6 id="option">Respiration</h6>
+                
+                  <textarea name = "option3" class="materialize-textarea" placeholder="Enter Option 3 here"> </textarea>
+                  <label for="textarea1">Enter option c above</label>
                 <div class="divider"></div>
                 <br>
-                <button id="d" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >D</button>
-                  <h6 id="option">All of the above</h6>
-        </div>            
-        <div class="container" style="text-align: left" >
+                
+                  <textarea name = "option4" class="materialize-textarea" placeholder="Enter Option 4 here"> </textarea>
+                  <label for="textarea1">Enter option d above</label>
+                <div class="divider"></div>
+                <br>
+                  <textarea name = "ans" class="materialize-textarea" placeholder="Enter Option 4 here"> </textarea>
+                  <label for="textarea1">Enter the answer option above</label>
+                <select name = 'ans'>
+                    <option value = "" disabled selected>Select the option which is the right ans</option>
+                    <option style="text-emphasis-color: #1976D2" value = "a">A</option>
+                    <option value = "b">B</option>
+                    <option value = "c">C</option>
+                    <option value = "d">D</option>
+                </select>               
+              
+
+            </div>    
+        <!--div class="container" style="text-align: left" >
                 <div class="input-field col s12">
                   <textarea name = "question456" class="materialize-textarea" placeholder="Enter Your Ans"> </textarea>
                     
                 </div>
-        </div>
+        </div-->
             <div class="container" id="Submit">
                 <br>
                 <button id="submit"  type="Submit" class="btn waves-effect waves-light blue darken-2" onclick="disp()">Submit</button>
             </div>
         </div>
-        <div id="Answer" class="container">
+        
             <br>
-            <div class="z-depth-1">
-                <div class="well" style="background-color: rgb(43, 173, 43)">
-                <p style="color:ghostwhite">You're right! Congratulations!</p>
-                </div>
-            </div>
-            <div class="z-depth-1">
-                <div class="well" style="background-color:rgb(226, 49, 49)">
-                <p style="color:ghostwhite"> D is the correct answer. Better luck next time!</p>
-                </div>
-            </div>
+        </form>    
         </div>
         <script>
             function disp() 

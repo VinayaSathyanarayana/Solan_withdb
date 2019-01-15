@@ -57,7 +57,7 @@ class qotw(models.Model):
     option2 = models.CharField(max_length=500, db_column='option2', null=False)
     option3 = models.CharField(max_length=500, db_column='option3', null=False)
     option4 = models.CharField(max_length=500, db_column='option4', null=False)
-
+    ans = models.CharField(max_length=5,db_column='ans', null=False)
     class Meta:
         db_table = 'qotw'
         verbose_name_plural = 'qotw'

@@ -226,13 +226,61 @@
               </div>
             </div>
           </div>
-                    
-        <div class="container" style="text-align: left" >
-                <div class="input-field col s12">
-                  <textarea name = "question456" class="materialize-textarea" placeholder="Enter Your Ans"> </textarea>
-                    
-                </div>
-        </div>
+        <form action = "{% url 'qotwstudent' %}" method="post" class = "input-field">
+          {% csrf_token %}
+        <div class="container" style="text-align: left">
+                <div class="divider"></div>
+                <br>
+                <ul class = "collection">
+                    {% for qn in questionList %}
+            <button value="a" id="a" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >A</button>
+                  <h6 id="option">{{ qn.option1 }}</h6>
+			
+          {% endfor %}
+          </ul>
+            <div class="divider"></div>
+                <br>
+                <ul class = "collection">
+                    {% for qn in questionList %}
+            <button value="b" id="b" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >B</button>
+                  <h6 id="option">{{ qn.option2 }}</h6>
+			
+          {% endfor %}
+          </ul>       
+            <div class="divider"></div>
+                <br>
+                <ul class = "collection">
+                    {% for qn in questionList %}
+            <button value="c" id="c" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >C</button>
+                  <h6 id="option">{{ qn.option3 }}</h6>
+			
+          {% endfor %}
+          </ul>
+          <div class="divider"></div>
+                <br>
+                <ul class = "collection">
+                    {% for qn in questionList %}
+            <button value="d" id="d" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >D</button>
+                  <h6 id="option">{{ qn.option4 }}</h6>
+			<!--li class="collection-item">(d){{ qn.option4 }}</li-->
+          {% endfor %}
+          </ul>
+                
+                <div class="divider"></div>
+                <br>
+                  <textarea name = "studans" class="materialize-textarea" placeholder="Enter Option 4 here"> </textarea>
+                  <label for="textarea1">Enter the answer option above</label>
+                <select name = 'ans'>
+                    <option value = "" disabled selected>Select the option which is the right ans</option>
+                    <option style="text-emphasis-color: #1976D2" value = "a">A</option>
+                    <option value = "b">B</option>
+                    <option value = "c">C</option>
+                    <option value = "d">D</option>
+                </select>               
+              
+
+            </div>            
+        
             <div class="container" id="Submit">
                 <br>
                 <button id="submit"  type="Submit" class="btn waves-effect waves-light blue darken-2" onclick="disp()">Submit</button>
