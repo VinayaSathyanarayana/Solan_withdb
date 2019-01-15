@@ -235,7 +235,11 @@
                     {% for qn in questionList %}
             <button value="a" id="a" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >A</button>
                   <h6 id="option">{{ qn.option1 }}</h6>
-			
+                  <!--input type="radio" name="studans" value="a">{{ qn.option1 }}<br>
+                  <input type="radio" name="studans" value="b">{{ qn.option2 }}<br>
+                  <input type="radio" name="studans" value="c">{{ qn.option3 }}<br>
+                  <input type="radio" name="studans" value="d">{{ qn.option4 }}<br-->
+
           {% endfor %}
           </ul>
             <div class="divider"></div>
@@ -244,7 +248,7 @@
                     {% for qn in questionList %}
             <button value="b" id="b" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >B</button>
                   <h6 id="option">{{ qn.option2 }}</h6>
-			
+                <!--input type="radio" name="studans" value="b">{{ qn.option2 }}<br-->
           {% endfor %}
           </ul>       
             <div class="divider"></div>
@@ -253,7 +257,7 @@
                     {% for qn in questionList %}
             <button value="c" id="c" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >C</button>
                   <h6 id="option">{{ qn.option3 }}</h6>
-			
+			<!--input type="radio" name="studans" value="c">{{ qn.option3 }}<br-->
           {% endfor %}
           </ul>
           <div class="divider"></div>
@@ -262,6 +266,7 @@
                     {% for qn in questionList %}
             <button value="d" id="d" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >D</button>
                   <h6 id="option">{{ qn.option4 }}</h6>
+                  <!--input type="radio" name="studans" value="d">{{ qn.option4 }}<br-->
 			<!--li class="collection-item">(d){{ qn.option4 }}</li-->
           {% endfor %}
           </ul>
