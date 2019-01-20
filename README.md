@@ -1,4 +1,5 @@
 IMPORTANT READ BEFORE PROCEDING
+
 STEPS TO RUN THE APPLICATION:
 
 1.download/clone this repository
