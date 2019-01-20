@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### STEPS TO RUN THE APPLICATION:
 
 1. run activate from the env folder to activate the virtual env
-2. create a user called *db_user* with password *dbpass* in mysql and grant all privilege on a new databases called cisco_students
+2. create a user called **_db_user_** with password **_dbpass** in mysql and grant all privilege on a new databases called **_cisco_students_**
 3. run the code in the next paragraph
 
 
