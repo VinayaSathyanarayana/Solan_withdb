@@ -139,11 +139,11 @@
     </div>
   </nav>
   <br>
-  <a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
+  <div style="padding-left:1%"><a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
 					  
   <div class="container">
-    <h2>Student questions</h2>  
-	  
+    <h2>Questions</h2>  
+	  <h5>Click the questions to view options<h5>
      
                       
 		 {% if questionList %}
@@ -176,7 +176,23 @@
                   <textarea Hidden name = "question333" class="materialize-textarea" >{{ qn.question }}</textarea>
                     
                 </div>
-       <button type ='submit'  class="btn waves-effect waves-light blue darken-2" >Delete</button>
+                <a class="waves-effect waves-light btn blue darken-1 modal-trigger" href="#demo-modal">Delete Question</a>
+                <div id="demo-modal" class="modal">
+   <div class="modal-content">
+     <p>Are you sure that you want to delete the question?</p>
+   </div>
+   <div class="modal-footer">
+     <button type ='submit'  class="modal-action modal-close waves-effect waves-green btn green lighten-1" >Delete</button>
+     <a href="#!" class="modal-action modal-close waves-effect waves-red btn red lighten-1">NO</a>
+   </div>
+ </div>
+
+<script>
+$(document).ready(function(){
+   $('.modal').modal();
+ })
+</script>
+       <!--button type ='submit'  class="btn waves-effect waves-light blue darken-2" >Delete</button-->
        <div id="del" class="modal">
         <br>
         <br>
@@ -231,12 +247,11 @@
 		 
 		 
 		  
-       
-       <footer class="page-footer light blue darken-2">
-        <p style="padding-left:22%;">© Copyright 2018 Solan - All Rights Reserved</p>
-        <br>
-        
-     
+      </div> 
+    <p style="padding-top:10%"></p>
+    <footer class="page-footer blue darken-2">
+      <p style="padding-left:22%;">© Copyright 2019 Solan - All Rights Reserved</p>
+       <br>            
     </footer>
   
 	  

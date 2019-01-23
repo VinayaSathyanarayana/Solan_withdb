@@ -201,9 +201,9 @@
           <br>
   {% load login_id %}
   {% if request.user|has_group:"Student" %}
-        <a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
+  <div style="padding-left:1%"><a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
   {% elif request.user|has_group:"Teachers" %}
-    <a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
+  <div style="padding-left:1%"><a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
     
   {% endif %}
           <!--End of nav bar code-->
@@ -231,9 +231,9 @@
         <div class="container" style="text-align: left">
                 <div class="divider"></div>
                 <br>
-                <ul class = "collection">
+                
                     {% for qn in questionList %}
-            <button value="a" id="a" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >A</button>
+            <button value="a" id="a" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected>A</button>
                   <h6 id="option">{{ qn.option1 }}</h6>
                   <!--input type="radio" name="studans" value="a">{{ qn.option1 }}<br>
                   <input type="radio" name="studans" value="b">{{ qn.option2 }}<br>
@@ -241,42 +241,42 @@
                   <input type="radio" name="studans" value="d">{{ qn.option4 }}<br-->
 
           {% endfor %}
-          </ul>
+          
             <div class="divider"></div>
                 <br>
-                <ul class = "collection">
+                
                     {% for qn in questionList %}
-            <button value="b" id="b" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >B</button>
+            <button value="b" id="b" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected >B</button>
                   <h6 id="option">{{ qn.option2 }}</h6>
                 <!--input type="radio" name="studans" value="b">{{ qn.option2 }}<br-->
           {% endfor %}
-          </ul>       
+                 
             <div class="divider"></div>
                 <br>
-                <ul class = "collection">
+                
                     {% for qn in questionList %}
-            <button value="c" id="c" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >C</button>
+            <button value="c" id="c" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected >C</button>
                   <h6 id="option">{{ qn.option3 }}</h6>
 			<!--input type="radio" name="studans" value="c">{{ qn.option3 }}<br-->
           {% endfor %}
-          </ul>
+          
           <div class="divider"></div>
                 <br>
-                <ul class = "collection">
+                
                     {% for qn in questionList %}
-            <button value="d" id="d" class="btn-floating waves-effect waves-light black-text" style="text-align: center" >D</button>
+            <button value="d" id="d" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected >D</button>
                   <h6 id="option">{{ qn.option4 }}</h6>
                   <!--input type="radio" name="studans" value="d">{{ qn.option4 }}<br-->
 			<!--li class="collection-item">(d){{ qn.option4 }}</li-->
           {% endfor %}
-          </ul>
+          
                 
                 <div class="divider"></div>
                 <br>
                   <textarea name = "studans" class="materialize-textarea" placeholder="Enter Option 4 here"> </textarea>
                   <label for="textarea1">Enter the answer option above</label>
                 <select name = 'ans'>
-                    <option value = "" disabled selected>Select the option which is the right ans</option>
+                    <option value = "" disabled selected>Enter the option which is the right ans below the options</option>
                     <option style="text-emphasis-color: #1976D2" value = "a">A</option>
                     <option value = "b">B</option>
                     <option value = "c">C</option>
@@ -291,19 +291,7 @@
                 <button id="submit"  type="Submit" class="btn waves-effect waves-light blue darken-2" onclick="disp()">Submit</button>
             </div>
         </div>
-        <div id="Answer" class="container">
-            <br>
-            <div class="z-depth-1">
-                <div class="well" style="background-color: rgb(43, 173, 43)">
-                <p style="color:ghostwhite">You're right! Congratulations!</p>
-                </div>
-            </div>
-            <div class="z-depth-1">
-                <div class="well" style="background-color:rgb(226, 49, 49)">
-                <p style="color:ghostwhite"> D is the correct answer. Better luck next time!</p>
-                </div>
-            </div>
-        </div>
+        
         <script>
             function disp() 
             {
@@ -342,8 +330,8 @@
                 <script src="{% static 'navbar.js' %}"></script>
       
       
-     <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
-     <input name="animation" type="hidden"> <!--btn to scroll to top-->
+                <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="material-icons">arrow_downward</i></a></div>
+                <input name="animation" type="hidden"> <!--btn to scroll to top-->
       
     
     </body>

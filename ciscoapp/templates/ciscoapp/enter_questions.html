@@ -92,10 +92,10 @@
 
         {% load login_id %}
   {% if request.user|has_group:"Student" %}
-		<a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
+  <div style="padding-left:1%"><a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
   {% elif request.user|has_group:"Teachers" %}
-  	<a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
-    <a href="student_q_manage"><button class="btn waves-effect waves-light blue darken-2" >Back to Question Management System</button></a>
+  <div style="padding-left:1%"><a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
+    
   	
   {% endif %}
 

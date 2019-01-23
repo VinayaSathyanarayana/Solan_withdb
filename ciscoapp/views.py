@@ -345,7 +345,7 @@ def qotw(request):
     cursor.execute(query123)
     cursor.execute(query)
 
-    return render(request, 'ciscoapp/qotw.html')
+    return render(request, 'ciscoapp/enter_questions.html')
 
 
 def rightans(request):

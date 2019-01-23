@@ -56,7 +56,7 @@
               
             </div></li>
             <li><a style="cursor: default;" href="#!">Class: 10</a></li>
-            <li><a style="cursor: default;" href="#!">Section: C</a></li>
+            
             <li><div class="divider"></div></li>
             <li><a class="waves-effect waves-light light blue darken-2 btn modal-trigger" href="#modal1">Change Password</a></li>
             <!--<li><a href="#!">Second Link</a></li>-->
@@ -89,10 +89,10 @@
 
         {% load login_id %}
   {% if request.user|has_group:"Student" %}
-		<a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
+		<div style="padding-left:1%"><a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
   {% elif request.user|has_group:"Teachers" %}
-  	<a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
-    <a href="student_q_manage"><button class="btn waves-effect waves-light blue darken-2" >Back to Question Management System</button></a>
+  <div style="padding-left:1%"><a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
+    
   	
   {% endif %}
 

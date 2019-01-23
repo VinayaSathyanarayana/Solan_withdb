@@ -72,6 +72,7 @@
               <script>  $(document).ready(function(){
                   $('select').formSelect();
                 });
+                
                 </script>
                 <nav>
                         <div class="nav-wrapper light blue darken-2">
@@ -93,7 +94,6 @@
                               
                             </div></li>
                             <li><a style="cursor: default;" href="#!">Class: 10</a></li>
-                            <li><a style="cursor: default;" href="#!">Section: C</a></li>
                             <li><div class="divider"></div></li>
                             <li><a class="waves-effect waves-light light blue darken-2 btn modal-trigger" href="#modal1">Change Password</a></li>
                             <!--<li><a href="#!">Second Link</a></li>-->
@@ -166,7 +166,7 @@
                                                <option style="text-emphasis-color: #1976D2" value = "Physics">Physics</option>
                                                <option value = "Chemistry">Chemistry</option>
                                                <option value = "Biology">Biology</option>
-                                            </select>
+                                              </select>
                                       </div>
 
                                           <div class = "row">
@@ -175,11 +175,18 @@
                                                    <option value = "Kinetic Theory">Kinetic Theory</option>
                                                    <option value = "Thermodynamics">Thermodynamics</option>
                                                    <option value = "Kinetics">Kinetics</option>
+                                                   <option value = "Equilibrium">Equilibrium</option>
+                                                   <option value = "Life Theory">Life Theory</option>
+                                                   <option value = "Optics">Optics</option>
+                                                   <option value = "Solid state">Solid State</option>
+                                                   <option value = "Mole concept">Mole Concept</option>
+                                                   <option value = "Atomic Structure">Atomic Structure</option>
+                                                   <option value = "Motion in a plane">Motion in a Plane</option>                                                   
                                                 </select>
-                                          </div>
-										                      <div class="modal-footer" style="background-color: white">
-                                            <button type ='submit' class="btn waves-effect waves-light blue darken-2" >View question bank</button>
-                                          </div>
+                                                </div>
+		
+                                                <button type ='submit' class="btn waves-effect waves-light blue darken-2" >View question bank</button>
+                                          
                                   </form>
                               </div>
                             </div>
@@ -268,26 +275,25 @@
                                                          <option value = "Kinetic Theory">Kinetic Theory</option>
                                                           <option value = "Thermodynamics">Thermodynamics</option>
                                                           <option value = "Kinetics">Kinetics</option>
-                                                      </select>               
+                                                          <option value = "Equilibrium">Equilibrium</option>
+                                                          <option value = "Life Theory">Life Theory</option>
+                                                          <option value = "Optics">Optics</option>
+                                                          <option value = "Solid state">Solid State</option>
+                                                          <option value = "Mole concept">Mole Concept</option>
+                                                          <option value = "Atomic Structure">Atomic Structure</option>
+                                                          <option value = "Motion in a plane">Motion in a Plane</option>
+                                                      </select>  
+                                                      <div class="input-field col s12">
+                                                        <textarea name = "questionID" class="materialize-textarea"></textarea>
+                                                        <label for="textarea1">Textarea</label>
+                                                      </div>
+                                                      <button type ='submit' class="btn waves-effect waves-light blue darken-2" >Enter question</button>             
                                                 </div>
 
 
 
                                                     <div class = "row">
-                                                          <select name = 'myselect5'>
-                                                             <option value = "" disabled selected>Select Question type</option>
-                                                             <option value = "Subjective"  onclick="dispS()">Subjective</option>
-                                                             <option value = "2" onclick="dispM()">MCQ</option>
-                                                          </select>
-
-                                                        <button type ='submit' class="btn waves-effect waves-light blue darken-2" >Enter question</button>
-                                                    </div>
-                                            <div class="row">
-        <div class="input-field col s12">
-          <textarea name = "questionID" class="materialize-textarea"></textarea>
-          <label for="textarea1">Textarea</label>
-        </div>
-      </div>
+                                                          
                                                 </form>
                                                 
                                         <script>
@@ -306,7 +312,7 @@
                                   </div>
                                 </div>
                             </div>       
-                              
+                            </div>  
                           
                         <section id ="leaderboard" style="background-color: white">
                             <div class="row" style="padding-left:10px; padding-right: 10px;">
@@ -359,7 +365,7 @@
                                  </div>
                         </section>
                         <footer class="page-footer blue darken-2">
-                            <p style="padding-left:22%;">© Copyright 2018 Solan - All Rights Reserved</p>
+                            <p style="padding-left:22%;">© Copyright 2019 Solan - All Rights Reserved</p>
                             <br>
                             
                          

@@ -90,9 +90,9 @@
 
   {% load login_id %}
   {% if request.user|has_group:"Student" %}
-		<a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
+		<div style="padding-left:1%"><a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2">Back to dashboard</button></a></div>
   {% elif request.user|has_group:"Teachers" %}
-  	<a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a>
+  <div style="padding-left:1%"><a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2">Back to dashboard</button></a></div>
   	
   {% endif %}
   
@@ -108,14 +108,15 @@
     {% if questionList %}
         <ul class = "collection">
           {% for qn in questionList %}
-            <li class="collection-item">{{ qn.question }}</li>
+            <li class="collection-item">Q) {{ qn.question }}</li>
 			
           {% endfor %}
         </ul>
     {% else %}
       <p>No questions are available.</p>
     {% endif %}
-
+      </div>
+    <p style="padding-top:17%"></p>
           <footer class="page-footer blue darken-2">
             <p style="padding-left:22%;">© Copyright 2018 Solan - All Rights Reserved</p>
              <br>            
