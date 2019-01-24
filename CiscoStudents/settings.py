@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cisco_students',
-        'USER': 'db_user',
-        'PASSWORD': 'dbpass',
+        'USER': 'solan',
+        'PASSWORD': 'kumarans',
        # 'OPTIONS': {
        #     'read_default_file': '~/CiscoConnect/my.cnf',
        # },

@@ -158,7 +158,7 @@ def dashboardS(request):
     query_result1 = points.objects.filter(
         login__user__email=str(request.user.email))
     pointsObject = query_result1[0]
-    query = "select * from point order by points DESC"
+    query = "select * from point order by points DESC LIMIT 5"
     print(query)
     query_result5 = points.objects.raw(query)
     print(query_result5)
