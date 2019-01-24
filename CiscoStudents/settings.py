@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'CiscoStudents.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cisco_students',
+        'NAME': 'solan$cisco_students',
         'USER': 'solan',
         'PASSWORD': 'kumarans',
         'HOST':'solan.mysql.pythonanywhere-services.com',
