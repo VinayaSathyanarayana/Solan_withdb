@@ -80,6 +80,8 @@ DATABASES = {
         'NAME': 'cisco_students',
         'USER': 'solan',
         'PASSWORD': 'kumarans',
+        'HOST':'solan.mysql.pythonanywhere-services.com',
+        'PORT':'3306',
        # 'OPTIONS': {
        #     'read_default_file': '~/CiscoConnect/my.cnf',
        # },
