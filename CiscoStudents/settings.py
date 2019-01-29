@@ -129,5 +129,11 @@ LOGOUT_REDIRECT_URL = '/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
