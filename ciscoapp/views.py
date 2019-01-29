@@ -245,7 +245,7 @@ def GenReport(request):
    # section = request.POST.get('myselect4')
     # query = "select * from points where grade = " + "'" + grade +"'"+"and section = " + "'" + str(section) + "'"
     #points = points.objects.raw(query)
-    query = "select * from point"
+    query = "select * from point order by points DESC "
     query_results = points.objects.raw(query)
     return render(request, 'ciscoapp/GenReport.html', {'query_results': query_results})
 
