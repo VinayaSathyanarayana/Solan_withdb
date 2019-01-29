@@ -1,4 +1,12 @@
 {% load staticfiles %}
+{% if user.is_authenticated %}
+	{% if request.user|has_group:"Student" %}
+		<meta http-equiv="refresh" content="0; URL='dashboardS.html'" />	
+  {% endif %}
+{% else %}
+	<meta http-equiv="refresh" content="0; URL='index.html'" />  
+{% endif %}
+
 <!DOCTYPE html>
 <html>
     <head>
