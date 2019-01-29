@@ -193,6 +193,7 @@ def enterBank(request):
     subject1 = request.POST.get('myselect3')
     chapter1 = request.POST.get('myselect4')
     question1 = request.POST['questionID']
+    username1 = request.POST['username']
     print(type(question1))
     print(type(subject1))
     print(type(chapter1))
@@ -204,7 +205,7 @@ def enterBank(request):
     # question=request.POST.get('subjective')
     #query = "INSERT INTO question(subject,chapter,question) " \
     #       "VALUES(%s,%s,%s)"
-    query = "insert into question VALUES " + "(" + "'" + str(subject1) + "'" + "," + "'" + str(chapter1) + "'" + "," + "'" + str(question1) + "'" + "," + "'" + "n" + "'" + ")"
+    query = "insert into question VALUES " +  "(" + "'" + str(subject1) + "'" + "," + "'" + str(chapter1) + "'" + "," + "'" + str(question1) + "'" + ","  + "'" + "n" + "'" + "," + "'" + str(username1) + "'" + ")"
     #query = "insert into question VALUES " + "(" + "'" + str(subject1) + "'" + "," + "'" + str(chapter1) + "'" + ")"
     #query1 = "insert into question VALUES(%s) where subject = " + "'" + str(subject1) + "'" + " and chapter = " + "'" + str(chapter1) + "'"
     print(query)
