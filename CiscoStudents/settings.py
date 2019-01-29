@@ -81,7 +81,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'solan$cisco_students',
-        
         'USER': 'solan',
         'PASSWORD': 'kumarans',
         'HOST':'solan.mysql.pythonanywhere-services.com',
