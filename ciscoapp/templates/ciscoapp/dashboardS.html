@@ -95,7 +95,7 @@
                             </div></li>
                             <li><a style="cursor: default;" href="#!">Class: 11</a></li>
                             <li><div class="divider"></div></li>
-                            <li><a class="waves-effect waves-light light blue darken-2 btn modal-trigger" href="#modal1" disabled selected>Change Password</a></li>
+                            <li><a class="waves-effect waves-light light blue darken-2 btn modal-trigger" href="{% url 'password_reset' %}">Change Password</a></li>
                             <!--<li><a href="#!">Second Link</a></li>-->
                             <li><div class="divider"></div></li>
 
@@ -296,7 +296,7 @@
                                                         <label for="textarea1">Textarea</label>
 
                                                         <textarea hidden name = "username" class="materialize-textarea">{{user.username}}</textarea>
-                                                        
+
                                                       </div>
                                                       <button type ='submit' class="btn waves-effect waves-light blue darken-2" >Enter question</button>
                                                 </div>
