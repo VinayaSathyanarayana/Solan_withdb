@@ -129,6 +129,7 @@ LOGOUT_REDIRECT_URL = '/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'solanlearn@gmail.com'
 EMAIL_HOST_PASSWORD = 'kumarans123'
