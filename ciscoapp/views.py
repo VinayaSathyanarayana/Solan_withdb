@@ -20,7 +20,7 @@ register = template.Library()
 @register.filter(name='has_group')
 def has_group(user, group_name):
     group = Group.objects.get(name=group_name)
-    return True if group in user.groups.all() else False    
+    return True if group in user.groups.all() else False
 
 
 
@@ -67,7 +67,7 @@ def insertStudent(request):
     #student1 = Student(roll_nbr=rollNbr, student_name=studentName, subject=subject, standard=standard)
     #student1.save()
     cursor = connection.cursor()
-    cursor.execute(query,args) 
+    cursor.execute(query,args)
     #cursor.close()
     st_lst = Student.objects.raw('select * from students')
     return render(request, 'ciscoapp/view_students.html', {'st_lst': st_lst})
@@ -117,7 +117,7 @@ def Login(request):
     #cursor=connection.cursor()
     #cursor.execute(query,args)
     login_lst = login.objects.raw("select * from login where email_id= " + "'" + str(email) + "'" + " and password=" + "'" + str(password) + "'")
-    print(login_lst) 	
+    print(login_lst)
     #return render(request, 'ciscoapp/view_students.html', {'login_lst': login_lst})
     if login_lst != None:
         return HttpResponse('you have logged in successfully!')
@@ -134,7 +134,7 @@ def Login(request):
 
 def subchpHtml(request):
     return render(request, 'ciscoapp/sub_chp.html')
-	
+
 def subchp(request):
     sub=request.POST['sub']
     chp=request.POST['chp']
@@ -146,14 +146,14 @@ def subchp(request):
     cursor.execute(query,args)
     sub_chp_lst = Subject.objects.raw('select sub from subject')
     return render(request, 'ciscoapp/sub_chp.html', {'sub_chp_lst': sub_chp_lst})
-	
+
 def retrieve(request):
 	print ("get_students")
 	q_lst =  questions.objects.all()
 	print (str(q_lst))
 	context_dict = {}
 	return render(request, 'ciscoapp/QuestionBank.html', {'q_lst': q_lst})
-	
+
 def dashboardS(request):
     query_result1 = points.objects.filter(
         login__user__email=str(request.user.email))
@@ -167,20 +167,25 @@ def dashboardS(request):
     #desc return render(request, 'ciscoapp/dashboardS.html', {'pointsObject': pointsObject})
 
 def dashboardT(request):
-    return render(request, 'ciscoapp/dashboardT.html') 
+    return render(request, 'ciscoapp/dashboardT.html')
 
 
 
 
 def homepage(request):
     return render(request, 'ciscoapp/index.html')
-	
+
 def viewBank(request):
     subject=request.POST.get('myselect1')
     chapter=request.POST.get('myselect2')
-    print('subject is : ', str(subject))
-    print('chapter is : ', str(chapter))
-    query = "select * from question where subject = " + "'" + str(subject) + "'" + " and chapter = " + "'" + str(chapter) + "'"
+    if chapter == "All":
+        print('subject is : ', str(subject))
+        print('chapter is : ', "All Questions")
+        query = "select * from question where subject = " + "'" + str(subject) + "'"
+    else:
+        print('subject is : ', str(subject))
+        print('chapter is : ', str(chapter))
+        query = "select * from question where subject = " + "'" + str(subject) + "'" + " and chapter = " + "'" + str(chapter) + "'"
     questions = question.objects.raw(query)
     return render(request, 'ciscoapp/QuestionBank.html', {'questionList': questions})
 
@@ -226,7 +231,7 @@ def enterBank(request):
 
 
 def student_q_manage(request):
-    
+
     subject = request.POST.get('myselect1')
     chapter = request.POST.get('myselect2')
     print('subject is : ', str(subject))
@@ -289,7 +294,7 @@ def deletequestion(request):
 
 def questionoftheweekstudent(request):
 	#query = "select * from question where qotw ='y'"
-    query = "select * from qotw " 
+    query = "select * from qotw "
     print(query)
     question234 = question.objects.raw(query)
     return render(request, 'ciscoapp/QuestionoftheweekS.html', {'questionList': question234})
@@ -384,7 +389,7 @@ def questions(request):
     query = "update question set  question = " + "'" + \
         str(question3) + "'" + " where question = " + "'" + str(question4) + "'"
     questions = question.objects.raw(query)
-    
+
 
     args = (question3)
     cursor = connection.cursor()
