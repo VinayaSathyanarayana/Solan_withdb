@@ -65,7 +65,13 @@
                    display:none;
                }
                </style>
-
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3366951268476558",
+          enable_page_level_ads: true
+     });
+</script>
           </head>
 
           <body>
@@ -161,17 +167,18 @@
                                   <form action = "{% url 'viewBank' %}" method="post" class = "input-field">
                                       {% csrf_token %}
                                       <div class = "row">
-                                            <select name='myselect1' >
+                                            <select name='myselect1' required>
                                                <option value = "" disabled selected>Select Subject</option>
                                                <!--<option style="text-emphasis-color: #1976D2" value = "Physics">Physics</option>
                                                <option value = "Chemistry">Chemistry</option>
                                                <option value = "Biology">Biology</option>-->
                                                <option value = "Computers">Computers</option>
                                               </select>
+
                                       </div>
 
                                           <div class = "row">
-                                                <select name = 'myselect2'>
+                                                <select name = 'myselect2' required>
                                                    <option value = "" disabled selected>Select chapter</option>
                                                    <!--<option value = "Kinetic Theory">Kinetic Theory</option>
                                                    <option value = "Thermodynamics">Thermodynamics</option>
@@ -201,6 +208,25 @@
                                                 <button type ='submit' class="btn waves-effect waves-light blue darken-2" >View question bank</button>
 
                                   </form>
+                                  <script type="text/javascript">
+                                    $("#my_form").submit(
+                                        var check_value = $("#assettype").val();
+                                        if (check_value == 0)
+                                            {
+                                            e.preventDefault();
+                                            // prevent the user he has to choose something
+                                            // by an alert for example, or background change of the element
+                                            $("#assettype").css("background-color", "red");
+                                            return false;
+                                            }
+                                        else
+                                            {
+                                            // and restore it if it's ok
+                                            $("#assettype").css("background-color", "inherit");
+                                            }
+                                            return true;
+                                            });
+                                </script>
                               </div>
                             </div>
 
