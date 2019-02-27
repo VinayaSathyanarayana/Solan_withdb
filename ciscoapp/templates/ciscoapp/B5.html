@@ -154,13 +154,14 @@
 
             <button class="collapsible">{{ qn.question }}</button>
               <div class="panel">
-                <form action = "{% url 'editquestion' %}" method="post" >
+                <form action = "{% url 'editquestion2' %}" method="post" >
               {% csrf_token %}
 
                 <div class="input-field col s12">
 
                   <textarea Hidden name = "question123" class="materialize-textarea" >{{ qn.question }}</textarea>
-
+                  <textarea Hidden name = "subject123" class="materialize-textarea" >{{ qn.subject }}</textarea>
+                  <textarea Hidden name = "chapter123" class="materialize-textarea" >{{ qn.chapter }}</textarea>
                 </div>
                 <div class="input-field col s12">
                   <textarea name = "question456" class="materialize-textarea" >{{ qn.question }} </textarea>
@@ -168,13 +169,14 @@
                 </div>
        <button type ='submit' class="btn waves-effect waves-light blue darken-2" >Save</button>
        </form>
-        <form action = "{% url 'deletequestion' %}" method="post" >
+        <form action = "{% url 'deletequestion2' %}" method="post" >
               {% csrf_token %}
 
               <div class="input-field col s12">
 
                   <textarea Hidden name = "question333" class="materialize-textarea" >{{ qn.question }}</textarea>
-
+                  <textarea Hidden name = "subject123" class="materialize-textarea" >{{ qn.subject }}</textarea>
+                  <textarea Hidden name = "chapter123" class="materialize-textarea" >{{ qn.chapter }}</textarea>
                 </div>
                 <!--a class="waves-effect waves-light btn blue darken-1 modal-trigger" href="#demo-modal">Delete Question</a>
                 <div id="demo-modal" class="modal">

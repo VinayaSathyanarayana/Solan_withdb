@@ -286,6 +286,28 @@ def editquestion(request):
     return render(request, 'ciscoapp/enter_questions.html')
 
 
+def editquestion2(request):
+    question2 = request.POST['question123']
+    #request.session['question33'] = question2
+    print('question2 is : ', str(question2))
+    question5 = request.POST['question456']
+    subject23 = request.POST['subject123']
+    chapter23 = request.POST['chapter123']
+    #return render(request, 'ciscoapp/Edit Question.html')
+    #request.session['question2'] = question2
+    print('question5 is : ', str(question5))
+    query = "update question set  question = " + "'" + \
+        str(question5) + "'" + " where question = " + \
+        "'" + str(question2) + "'" + "and subject = " + "'" + str(subject23) + \
+        "'" + " and chapter = " + "'" + str(chapter23) + "'"
+    print(query)
+    questions = question.objects.raw(query)
+    args = (question2, question5)
+    cursor = connection.cursor()
+    #cursor.execute("update question set question = (%s) where question = (%s) ", args)
+    cursor.execute(query)
+    return render(request, 'ciscoapp/enter_questions.html')
+
 def deletequestion(request):
     question9 = request.POST['question333']
     print(question9)
@@ -299,6 +321,19 @@ def deletequestion(request):
     cursor.execute(query)
     return render(request, 'ciscoapp/Deletequestion.html')
 
+
+def deletequestion2(request):
+    question9 = request.POST['question333']
+    print(question9)
+    subject33 = request.POST['subject123']
+    chapter33 = request.POST['chapter123']
+    query = "delete from  question where question = " + \
+        "'" + str(question9) + "'" + "and subject = " + "'" + str(subject33) + \
+        "'" + " and chapter = " + "'" + str(chapter33) + "'"
+    print(query)
+    cursor = connection.cursor()
+    cursor.execute(query)
+    return render(request, 'ciscoapp/Deletequestion.html')
 
 def questionoftheweekstudent(request):
 	#query = "select * from question where qotw ='y'"

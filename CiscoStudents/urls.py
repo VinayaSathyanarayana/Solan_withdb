@@ -46,7 +46,8 @@ urlpatterns = [
 
     path('editquestion', views.editquestion, name='editquestion'),
    	path('deletequestion', views.deletequestion, name='deletequestion'),
-
+   	path('editquestion2', views.editquestion2, name='editquestion2'),
+   	path('deletequestion2', views.deletequestion2, name='deletequestion2'),
 
 	path('dashboardS.html', views.dashboardS, name='dashboardS'),
 	path('dashboardT.html', views.dashboardT, name='dashboardT'),
