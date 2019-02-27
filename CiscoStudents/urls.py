@@ -20,7 +20,7 @@ from django.conf import settings
 from django.views.generic.base import TemplateView
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -57,7 +57,7 @@ urlpatterns = [
 	path('testModal', views.testModal, name='testModal'),
     path('enter_questions', views.enterBank, name='enter_questions'),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-   # path('', TemplateView.as_view(template_name='index.html'), name='homepage'),
+    #path('', TemplateView.as_view(template_name='index.html'), name='homepage'),
     #path('QuestionOfTheWeekS.html', views.QuestionOfTheWeekS, name='QuestionOfTheWeekS.html')
     #path('view_school', views.get_school, name='get_school'),
 	path('qotw', views.qotw,name='qotw'),
@@ -68,6 +68,7 @@ urlpatterns = [
 	path('questionoftheweekteacher', views.questionoftheweekteacher, name='questionoftheweekteacher'),
 	path('GenReport.html', views.GenReport, name='GenReport'),
 	path('student_q_manage', views.student_q_manage, name='student_q_manage'),
-
+	path('MyQuestions.html', views.myquestions, name='myquestions'),
+	#url(r'^newsletter/', include('newsletter.urls')),
 ]
 

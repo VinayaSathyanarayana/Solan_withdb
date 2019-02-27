@@ -113,10 +113,10 @@
 
 
                           <ul class="right hide-on-med-and-down">
+                            <li><a id="blabla1" href="{% url 'myquestions' %}">My Questions</a></li>
                             <li><a href="#leaderboard">Leaderboard</a></li>
                             <li><a style="cursor: default;" href="#!">Points<span class="new badge" data-badge-caption="">{{ pointsObject.points }}</span></a></li>
                             <li><a href="{% url 'logout' %}">Logout</a></li>
-
                           </ul>
                           <!-- Modal Structure -->
   <div id="modal1" class="modal">
@@ -369,7 +369,7 @@
                                 </div>
                             </div>
                             </div>
-
+                          
                         <section id ="leaderboard" style="background-color: white">
                             <div class="row" style="padding-left:10px; padding-right: 10px;">
 
@@ -449,9 +449,42 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
                 <script src="{% static 'modal.js' %}"></script>
                 <script src="{% static 'navbar.js' %}"></script>
+                <!--script type="text/javascript">
+                  $(document).load(function(){
+                   $('#blabla1').click(function(e){
+                    e.preventDefault();
+                    alert("Clicked");
+                    $.ajax({
+                      type:'POST',
+                      url:'/myquestions',
+                      data:{
+                        username5:$('#username5').val(),
+                        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                      },
+                      sucess:function(){
+                        alert("test")
 
+                      },
+                    });
+                    });
+                  });
+                  /**$(document).on('submit','#myquestions5',function(e){
+                    e.preventDefault();
+                    
+                    $.ajax({
+                      type:'POST',
+                      url:'/myquestions',
+                      data:{
+                        username5:$('#username5').val(),
+                        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                      },
+                      sucess:function(){
+                        alert("test")
 
-
+                      }
+                    });
+                  });
+                </script-->
 
                 <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="material-icons">arrow_downward</i></a></div>
                 <input name="animation" type="hidden"> <!--btn to scroll to top-->

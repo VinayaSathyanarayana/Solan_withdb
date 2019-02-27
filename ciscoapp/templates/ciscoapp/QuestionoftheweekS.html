@@ -24,7 +24,7 @@
             <link rel="stylesheet" href="{% static 'theme/css/style.css' %}">
             <link rel="stylesheet" href="{% static 'sidebar/sidebar.css' %}">
             <link rel="stylesheet" href="{% static 'cards.css' %}">
-            
+
             <!--link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css"-->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
@@ -89,43 +89,43 @@
                 $('#a').on(
                 {
                     click: function()
-                    { 
+                    {
                         $('#submit').prop("disabled",false);
                         $("button").removeClass("active");
                         $(this).addClass("active");
-                       
-                    }  
+
+                    }
                 });
                 $('#b').on(
                 {
                     click: function()
-                    { 
+                    {
                         $('#submit').prop("disabled",false);
                         $("button").removeClass("active");
                         $(this).addClass("active");
-                       
-                    }  
+
+                    }
                 });
                 $('#c').on(
                 {
                     click: function()
-                    { 
+                    {
                         $('#submit').prop("disabled",false);
                         $("button").removeClass("active");
                         $(this).addClass("active");
-                       
-                    }  
+
+                    }
                 });
                 $('#d').on(
                 {
                     click: function()
-                    { 
+                    {
                         $('#submit').prop("disabled",false);
                         $("button").removeClass("active");
                         $(this).addClass("active");
-                        
-                       
-                    }  
+
+
+                    }
                 });
                 $('#submit').on(
                 {
@@ -142,7 +142,7 @@
                         $('#c').prop("disabled",true);
                         $('#d').prop("disabled",true);
                         }
-                        
+
                     }
                 });
                 });
@@ -166,26 +166,26 @@
                         {{ user.username }}
                         </span></a>
                         <a style="cursor: default;" href="#email"><span class="white-text bold email">{{ user.email }}</span></a>
-                  
-                  
+
+
                 </div></li>
-                <li><a style="cursor: default;" href="#!">Class: 10</a></li>
-                <li><a style="cursor: default;" href="#!">Section: C</a></li>
+                <li><a style="cursor: default;" href="#!">Class: 11</a></li>
+
                 <li><div class="divider"></div></li>
-                <li><a class="waves-effect waves-light light blue darken-2 btn modal-trigger" href="#modal1">Change Password</a></li>
+                <li><a class="waves-effect waves-light light blue darken-2 btn modal-trigger" href="{% url 'password_reset' %}">Change Password</a></li>
                 <!--<li><a href="#!">Second Link</a></li>-->
                 <li><div class="divider"></div></li>
-                
-                
-              </ul>
-              
-              <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-             
 
-              
+
+              </ul>
+
+              <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+
+
+
               <ul class="right hide-on-med-and-down">
                 <li><a href="{% url 'logout' %}">Logout</a></li>
-                
+
               </ul>
               <!-- Modal Structure -->
 <div id="modal1" class="modal">
@@ -204,14 +204,14 @@
   <div style="padding-left:1%"><a href="dashboardS.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
   {% elif request.user|has_group:"Teachers" %}
   <div style="padding-left:1%"><a href="dashboardT.html"><button class="btn waves-effect waves-light blue darken-2" >Back to dashboard</button></a></div>
-    
+
   {% endif %}
           <!--End of nav bar code-->
         <div>
             <div class="container">
                 <div class="page-header">
-                <h2>Question of the week</h2>      
-                </div>    
+                <h2>Question of the week</h2>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -220,7 +220,7 @@
                 <div class="card-content black-text">
                   <h5>{% for qn in questionList %}
             {{ qn.question }}
-			
+
           {% endfor %}</h5>
                 </div>
               </div>
@@ -231,7 +231,7 @@
         <div class="container" style="text-align: left">
                 <div class="divider"></div>
                 <br>
-                
+
                     {% for qn in questionList %}
             <button value="a" id="a" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected>A</button>
                   <h6 id="option">{{ qn.option1 }}</h6>
@@ -241,36 +241,36 @@
                   <input type="radio" name="studans" value="d">{{ qn.option4 }}<br-->
 
           {% endfor %}
-          
+
             <div class="divider"></div>
                 <br>
-                
+
                     {% for qn in questionList %}
             <button value="b" id="b" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected >B</button>
                   <h6 id="option">{{ qn.option2 }}</h6>
                 <!--input type="radio" name="studans" value="b">{{ qn.option2 }}<br-->
           {% endfor %}
-                 
+
             <div class="divider"></div>
                 <br>
-                
+
                     {% for qn in questionList %}
             <button value="c" id="c" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected >C</button>
                   <h6 id="option">{{ qn.option3 }}</h6>
 			<!--input type="radio" name="studans" value="c">{{ qn.option3 }}<br-->
           {% endfor %}
-          
+
           <div class="divider"></div>
                 <br>
-                
+
                     {% for qn in questionList %}
             <button value="d" id="d" class="btn-floating waves-effect waves-light black-text" style="text-align: center" disabled selected >D</button>
                   <h6 id="option">{{ qn.option4 }}</h6>
                   <!--input type="radio" name="studans" value="d">{{ qn.option4 }}<br-->
 			<!--li class="collection-item">(d){{ qn.option4 }}</li-->
           {% endfor %}
-          
-                
+
+
                 <div class="divider"></div>
                 <br>
                   <textarea name = "studans" class="materialize-textarea" placeholder="Enter Option 4 here"> </textarea>
@@ -281,19 +281,19 @@
                     <option value = "b">B</option>
                     <option value = "c">C</option>
                     <option value = "d">D</option>
-                </select>               
-              
+                </select>
 
-            </div>            
-        
+
+            </div>
+
             <div class="container" id="Submit">
                 <br>
                 <button id="submit"  type="Submit" class="btn waves-effect waves-light blue darken-2" onclick="disp()">Submit</button>
             </div>
         </div>
-        
+
         <script>
-            function disp() 
+            function disp()
             {
                 document.getElementById("Answer").style.display = "block";
             }
@@ -307,10 +307,10 @@
         <footer class="page-footer blue darken-2">
             <p style="padding-left:22%;">© Copyright 2019 Solan - All Rights Reserved</p>
             <br>
-            
-         
+
+
         </footer>
-      
+
         <!--Footer End-->
         <!--Scripts Used-->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -328,12 +328,12 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
                 <script src="{% static 'modal.js' %}"></script>
                 <script src="{% static 'navbar.js' %}"></script>
-      
-      
+
+
                 <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="material-icons">arrow_downward</i></a></div>
                 <input name="animation" type="hidden"> <!--btn to scroll to top-->
-      
-    
+
+
     </body>
 
 </html>

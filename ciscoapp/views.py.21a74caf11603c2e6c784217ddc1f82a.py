@@ -247,10 +247,15 @@ def student_q_manage(request):
 
 
 def myquestions(request):
-    
-    username9 = request.user.username
+    username = request.POST
+    print('Username is : ', str(subject))
+    print('chapter is : ', str(chapter))
+    request.session['subject23'] = subject
+    request.session['chapter23'] = chapter
+    request.session['subject53'] = subject
+    request.session['chapter53'] = chapter
     query = "select * from question where username = " + "'" + \
-        str(username9) + "'" 
+        str(username) + "'" 
     questions = question.objects.raw(query)
     return render(request, 'ciscoapp/B5.html', {'questionList': questions})
 
